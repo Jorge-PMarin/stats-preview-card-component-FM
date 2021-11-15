@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet-accent: hsl(277, 64%, 61%);
+
+  --white: hsl(0, 0%, 100%);
+  --slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--very-dark-blue);
+  min-height: 130vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--dark-desaturated-blue);
+  max-width: 34rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card__top {
+  position: relative;
+}
+
+.card__img {
+  display: block;
+  width: 100%;
+}
+
+.card__img.desktop {
+  display: none;
+}
+
+.card__overlay {
+  background: var(--soft-violet-accent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.card__bottom {
+  padding: 3.5rem 3rem;
+  text-align: center;
+}
+
+.card__heading,
+.card__number {
+  color: var(--white);
+}
+
+.card__number {
+  font-size: 2.5rem;
+}
+
+.card__heading {
+  margin-bottom: 0.8em;
+}
+
+.card__heading > span {
+  color: var(--soft-violet-accent);
+}
+
+.card__paragraph {
+  color: var(--slightly-transparent-white);
+  margin-bottom: 2.5em;
+  line-height: 1.5em;
+}
+
+.card__group {
+  font-family: inherit;
+}
+
+.card__group:not(:last-child) {
+  margin-bottom: 2em;
+}
+
+.card__number {
+  font-weight: 700;
+  margin-bottom: 0.3em;
+}
+
+.card__text {
+  text-transform: uppercase;
+  color: var(--slightly-transparent-white);
+}
+
+@media (min-width: 1000px) {
+  body {
+    min-height: 100vh;
+  }
+
+  .card {
+    width: 80%;
+    max-width: 100rem;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .card__stats {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card__img.desktop {
+    display: block;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .card__img.mobile {
+    display: none;
+  }
+
+  .card__top {
+    width: 50%;
+  }
+
+  .card__bottom {
+    width: 50%;
+    text-align: left;
+    padding: 6rem;
+  }
+
+  .card__heading {
+    font-size: 3.5rem;
+  }
+
+  .card__paragraph {
+    margin-bottom: 4em;
+    max-width: 35rem;
+  }
+
+  .card__group:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
